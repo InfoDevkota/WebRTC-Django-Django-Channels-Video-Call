@@ -46,7 +46,8 @@ let pcConfig = {
                 "url": "turn:turn.jap.bloggernepal.com:5349",
                 "username": "guest",
                 "credential": "somepassword"
-            }
+            },
+            {"url": "stun:stun.l.google.com:19302"}
         ]
 };
 
@@ -61,9 +62,11 @@ let sdpConstraints = {
 let socket;
 let callSocket;
 function connectSocket() {
+    let ws_scheme = window.location.protocol == "https:" ? "wss://" : "ws://";
+    console.log(ws_scheme);
 
     callSocket = new WebSocket(
-        'ws://'
+        ws_scheme
         + window.location.host
         + '/ws/call/'
     );

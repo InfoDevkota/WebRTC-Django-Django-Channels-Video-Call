@@ -1,0 +1,4 @@
+Django==3.2.5
+channels==3.0.4
+gunicorn==20.1.0
+daphne==3.0.2
